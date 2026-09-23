@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A fast, accessible percentage calculator built with plain HTML, CSS, and JavaScript.">
+  <title>Percentage Calculator — Smartly Calculators</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="calculator" aria-labelledby="page-title">
+      <p class="eyebrow">Open-source calculator demo</p>
+      <h1 id="page-title">Percentage Calculator</h1>
+      <p class="intro">Choose a calculation, enter two numbers, and get a clearly explained result.</p>
+
+      <form id="calculator-form" novalidate>
+        <label for="calculation-type">Calculation</label>
+        <select id="calculation-type" name="calculation-type">
+          <option value="part-of-total">What percent is one number of another?</option>
+          <option value="percent-of-number">What is a percentage of a number?</option>
+          <option value="percentage-change">What is the percentage change?</option>
+        </select>
+
+        <div class="fields">
+          <div>
+            <label id="first-label" for="first-value">Part</label>
+            <input id="first-value" name="first-value" type="number" step="any" inputmode="decimal" placeholder="25" required>
+          </div>
+          <div>
+            <label id="second-label" for="second-value">Total</label>
+            <input id="second-value" name="second-value" type="number" step="any" inputmode="decimal" placeholder="100" required>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="submit">Calculate</button>
+          <button id="reset-button" class="secondary" type="reset">Reset</button>
+        </div>
+      </form>
+
+      <section id="result-panel" class="result" aria-live="polite" aria-atomic="true" hidden>
+        <p class="result-label">Result</p>
+        <output id="result-value"></output>
+        <p id="result-explanation"></p>
+      </section>
+    </section>
+
+    <aside class="notes" aria-labelledby="notes-title">
+      <h2 id="notes-title">Formulas used</h2>
+      <ul>
+        <li><strong>Part of total:</strong> (part ÷ total) × 100</li>
+        <li><strong>Percent of number:</strong> (percentage ÷ 100) × number</li>
+        <li><strong>Percentage change:</strong> ((new − old) ÷ old) × 100</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    Built by <a href="https://smartlycalculators.com/">Smartly Calculators</a> — practical calculators and formula guides.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
